@@ -1,0 +1,108 @@
+{
+    "winget": {
+        "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+        "CreationDate": "2023-12-18 23:51:33.339393",
+        "Sources": [
+            {
+                "Packages": [
+                    {
+                        "PackageIdentifier": "AntibodySoftware.WizTree"
+                    },
+                    {
+                        "PackageIdentifier": "Microsoft.WindowsTerminal"
+                    },
+                    {
+                        "PackageIdentifier": "Valve.Steam"
+                    },
+                    {
+                        "PackageIdentifier": "qBittorrent.qBittorrent"
+                    },
+                    {
+                        "PackageIdentifier": "Microsoft.PowerShell"
+                    },
+                    {
+                        "PackageIdentifier": "JanDeDobbeleer.OhMyPosh"
+                    },
+                    {
+                        "PackageIdentifier": "OBSProject.OBSStudio"
+                    },
+                    {
+                        "PackageIdentifier": "Notepad++.Notepad++"
+                    },
+                    {
+                        "PackageIdentifier": "nepnep.neofetch-win"
+                    },
+                    {
+                        "PackageIdentifier": "Google.NearbyShare"
+                    },
+                    {
+                        "PackageIdentifier": "Mozilla.Firefox"
+                    },
+                    {
+                        "PackageIdentifier": "Microsoft.VisualStudioCode"
+                    },
+                    {
+                        "PackageIdentifier": "Microsoft.VCRedist.2015+.x64"
+                    },
+                    {
+                        "PackageIdentifier": "Microsoft.VCRedist.2015+.x86"
+                    },
+                    {
+                        "PackageIdentifier": "Microsoft.VCRedist.2008.x64"
+                    },
+                    {
+                        "PackageIdentifier": "Microsoft.VCRedist.2008.x86"
+                    },
+                    {
+                        "PackageIdentifier": "Google.GoogleDrive"
+                    },
+                    {
+                        "PackageIdentifier": "Git.Git"
+                    },
+                    {
+                        "PackageIdentifier": "Cloudflare.Warp"
+                    },
+                    {
+                        "PackageIdentifier": "BleachBit.BleachBit"
+                    },
+                    {
+                        "PackageIdentifier": "7zip.7zip"
+                    }
+                ],
+                "SourceDetails": {
+                    "Argument": "https://cdn.winget.microsoft.com/cache",
+                    "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+                    "Name": "winget",
+                    "Type": "Microsoft.PreIndexed.Package"
+                }
+            }
+        ],
+        "WinGetVersion": "1.4"
+    },
+    "scoop": {
+        "apps": []
+    },
+    "chocolatey": {
+        "apps": [
+            {
+                "Name": "chocolatey"
+            }
+        ]
+    },
+    "pip": {
+        "apps": [
+            {
+                "Name": "setuptools"
+            },
+            {
+                "Name": "pip"
+            }
+        ]
+    },
+    "npm": {
+        "apps": []
+    },
+    ".net tool": {
+        "apps": []
+    }
+}

@@ -1,0 +1,60 @@
+{
+  "editor.accessibilitySupport": "off",
+  "editor.cursorStyle": "underline-thin",
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 0,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "extensions.ignoreRecommendations": true,
+  "explorer.compactFolders": true,
+  "security.workspace.trust.enabled": false,
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.cursorBlinking": true,
+  "window.titleSeparator": " • ",
+  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+  "window.restoreFullscreen": true,
+  "window.newWindowDimensions": "maximized",
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "material-icon-theme",
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
+  "zenMode.centerLayout": false,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.enableAppInsights": false,
+  "code-runner.ignoreSelection": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.showExecutionMessage": false,
+  "code-runner.showRunCommandInEditorContextMenu": false,
+  "code-runner.showRunCommandInExplorerContextMenu": false,
+  "code-runner.preserveFocus": false,
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "GitHub Dark Default",
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "git.openRepositoryInParentFolders": "never",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "livePreview.customExternalBrowser": "Chrome",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "remote.SSH.remotePlatform": {
+    "192.168.0.44": "linux"
+  }
+}
