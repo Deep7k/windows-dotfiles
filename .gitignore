@@ -1,0 +1,13 @@
+# Files to ignore in powershell directory.
+Powershell/Modules
+Powershell/Help
+Powershell/Scripts/InstalledScriptInfos
+Powershell/Microsoft.VSCode_profile.ps1
+
+# Ignore everything in Notepad++ directory.
+Notepad++/*
+Notepad++/**/
+# Except.
+!Notepad++/config.xml
+!Notepad++/shortcuts.xml
+!Notepad++/stylers.xml
