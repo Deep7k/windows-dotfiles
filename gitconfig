@@ -1,0 +1,33 @@
+[user]
+	name = DEEPAK N A
+	email = 60418902+Deep7k@users.noreply.github.com
+[core]
+	autocrlf = true
+	editor = notepad++.exe
+[pager]
+	diff = false
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff $LOCAL $REMOTE"
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = "code --wait $BASE $LOCAL $REMOTE $MERGED"
+	trustExitCode = false
+[color]
+	ui = auto
+[push]
+	default = simple
+[pull]
+	rebase = true
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	lg = log --oneline --graph --decorate
+	flg = log --oneline --graph --decorate
+	last = log -1 HEAD
+	sync = "!git pull && git push"
+	hist = log --color=auto --pretty=format:'%C(auto)%h%d %C(black)%an %C(auto)%ar %C(auto)%s' --abbrev-commit --date=relative
