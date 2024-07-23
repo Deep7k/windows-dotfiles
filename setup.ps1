@@ -76,7 +76,7 @@ try {
     [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")
     $fontFamilies = (New-Object System.Drawing.Text.InstalledFontCollection).Families.Name
     
-    if ($fontFamilies -notcontains "CaskaydiaCove NF") {
+    if (($fontFamilies -notcontains "CaskaydiaCove NF") -and ($WithOptionalFont) ) {
 
         Write-Host "Installing Cascadiacode NF..."
         Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaCode.zip" -OutFile ".\CascadiaCode.zip"
@@ -118,8 +118,7 @@ $wtSettingsTarget = (Resolve-Path ".\windows-terminal-settings.json").Path
 $powershellDirPath = "$env:USERPROFILE\Documents\Powershell"
 $powershellDirTarget = (Resolve-Path ".\Powershell").Path
 $gitconfigPath = "$env:USERPROFILE\.gitconfig"
-$nppPath = "$env:APPDATA\Notepad++"
-$dotfilesDir = "$env:USERPROFILE\.dotfiles"
+$gitconfigTarget = (Resolve-Path ".\gitconfig").Path
 
 function BackupAndLink {
     param (
@@ -142,8 +141,7 @@ function BackupAndLink {
 try {
     BackupAndLink -path $wtSettingsPath -target $wtSettingsTarget
     BackupAndLink -path $powershellDirPath -target $powershellDirTarget
-    BackupAndLink -path $gitconfigPath -target $dotfilesDir\gitconfig
-    BackupAndLink -path $nppPath -target $dotfilesDir\Notepad++
+    BackupAndLink -path $gitconfigPath -target $gitconfigTarget
 }
 catch {
     Write-Error "Unable to create symlinks Error: $_"
