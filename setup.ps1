@@ -114,11 +114,11 @@ catch {
 
 Write-Host "Configuring Dotfiles..."
 $wtSettingsPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
-$wtSettingsTarget = (Resolve-Path ".\windows-terminal-settings.json").Path
+$wtSettingsTarget = (Resolve-Path "$PSScriptRoot\windows-terminal-settings.json").Path
 $powershellDirPath = "$env:USERPROFILE\Documents\Powershell"
-$powershellDirTarget = (Resolve-Path ".\Powershell").Path
+$powershellDirTarget = (Resolve-Path "$PSScriptRoot\Powershell").Path
 $gitconfigPath = "$env:USERPROFILE\.gitconfig"
-$gitconfigTarget = (Resolve-Path ".\gitconfig").Path
+$gitconfigTarget = (Resolve-Path "$PSScriptRoot\gitconfig").Path
 
 function BackupAndLink {
     param (
