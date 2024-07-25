@@ -27,7 +27,7 @@ Before you can use these dotfiles, ensure you have the following installed:
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/windows-dotfiles.git ~\.dotfiles
+   git clone https://github.com/Deep7k/windows-dotfiles.git "$env:USERPROFILE\.dotfiles"
    cd ~\.dotfiles
    ```
 
