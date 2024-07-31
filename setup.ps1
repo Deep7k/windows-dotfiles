@@ -8,14 +8,14 @@
 .LINK
     https://github.com/Deep7k/windows-dotfiles/blob/master/README.md
 .EXAMPLE
-    .\setup.ps1 -WithOptionalFont
+    .\setup.ps1 -WithFonts
 #>
 
 [CmdletBinding()]
 param (
     [Parameter(Mandatory = $false)]
     [switch]
-    $WithOptionalFont,
+    $WithFonts,
     [Parameter(Mandatory = $false)]
     [switch]
     $WithOptionalApps
@@ -76,7 +76,7 @@ try {
     [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")
     $fontFamilies = (New-Object System.Drawing.Text.InstalledFontCollection).Families.Name
     
-    if (($fontFamilies -notcontains "CaskaydiaCove NF") -and ($WithOptionalFont) ) {
+    if (($fontFamilies -notcontains "CaskaydiaCove NF") -and ($WithFonts) ) {
 
         Write-Host "Installing Cascadiacode NF..."
         Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaCode.zip" -OutFile ".\CascadiaCode.zip"
@@ -92,7 +92,7 @@ try {
         Remove-Item -Path ".\CascadiaCode.zip" -Force
     }
     # Install Firacode Nerd Font if parameter is specified
-    if (($fontFamilies -notcontains "FiraCode Nerd Font") -and ($WithOptionalFont) ) {
+    if (($fontFamilies -notcontains "FiraCode Nerd Font") -and ($WithFonts) ) {
 
         Write-Host "Installing Fira Code NF..."
         Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip" -OutFile ".\FiraCode.zip"
