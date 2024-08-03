@@ -119,6 +119,7 @@ $powershellDirPath = "$env:USERPROFILE\Documents\Powershell"
 $powershellDirTarget = (Resolve-Path "$PSScriptRoot\Powershell").Path
 $gitconfigPath = "$env:USERPROFILE\.gitconfig"
 $gitconfigTarget = (Resolve-Path "$PSScriptRoot\gitconfig").Path
+$notepadTarget = (Resolve-Path "$PSScriptRoot\Notepad++").Path
 
 function BackupAndLink {
     param (
@@ -146,6 +147,9 @@ try {
 catch {
     Write-Error "Unable to create symlinks Error: $_"
 }
+
+Compress-Archive -Path $env:APPDATA\Notepad++ -DestinationPath $env:APPDATA\Notepad++\ConfigBackup$(Get-Date -Format "yyyyMMddHH") -CompressionLevel Fastest
+Copy-Item -Path $notepadTarget -Destination $env:APPDATA\Notepad++ -Force
 
 # Check and install PS Modules
 Write-Host "Installing Powershell modules..."
