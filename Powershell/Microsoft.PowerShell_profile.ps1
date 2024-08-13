@@ -68,27 +68,20 @@ if (Test-Path($ChocolateyProfile)) {
 
 function Send-Keystrokes {
   param (
+    [switch]$Verbose = $false,
     [int]$KeystrokeInterval = 40,
     [int]$Until = 0
   )
   
   $wsh = New-Object -ComObject WScript.Shell
+  $endTime = if ($Until -gt 0) { (Get-Date).AddMinutes($Until) } else { $null }
   
-  if ($Until -gt 0) {
-    $endTime = (Get-Date).AddMinutes($Until)
-    while ((Get-Date) -lt $endTime) {
-      $currentTime = Get-Date
-      Write-Host "Sending iamhere at $($currentTime.ToString('HH:mm:ss'))"
-      $wsh.SendKeys('+{F15}')
-      Start-Sleep -Seconds $KeystrokeInterval
+  while ($true) {
+    if ($endTime -and (Get-Date) -ge $endTime) { break }
+    if ($Verbose) {
+      Write-Host "Sending keystroke at $(Get-Date -Format 'HH:mm:ss')"
     }
-  }
-  else {
-    while ($true) {
-      $currentTime = Get-Date
-      Write-Host "Sending iamhere at $($currentTime.ToString('HH:mm:ss'))"
-      $wsh.SendKeys('+{F15}')
-      Start-Sleep -Seconds $KeystrokeInterval
-    }
+    $wsh.SendKeys('+{F15}')
+    Start-Sleep -Seconds $KeystrokeInterval
   }
 }
