@@ -33,7 +33,7 @@ Set-PSReadLineOption -HistoryNoDuplicates:$True
 #######################################################
 
 Set-Alias npp 'notepad++'
-Set-Alias ping Test-Connection
+# Set-Alias ping Test-Connection
 Set-Alias wget Invoke-WebRequest
 New-Alias -Name iamhere -Value Send-Keystrokes
 
