@@ -7,12 +7,18 @@
       "alignment": "left",
       "segments": [
         {
+          "properties": {
+            "cache_duration": "none"
+          },
           "template": "⚡",
           "foreground": "#ff3b3b",
           "type": "root",
           "style": "plain"
         },
         {
+          "properties": {
+            "cache_duration": "none"
+          },
           "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "foreground": "#ffffff",
           "background": "transparent",
@@ -21,6 +27,7 @@
         },
         {
           "properties": {
+            "cache_duration": "none",
             "folder_icon": "...",
             "folder_separator_icon": "<transparent> \ue0bd </>",
             "home_icon": "\ueb06",
@@ -36,6 +43,7 @@
         },
         {
           "properties": {
+            "cache_duration": "none",
             "fetch_stash_count": true,
             "fetch_status": true
           },
@@ -54,6 +62,7 @@
         },
         {
           "properties": {
+            "cache_duration": "none",
             "style": "dallas",
             "threshold": 0
           },
@@ -66,6 +75,9 @@
           "style": "diamond"
         },
         {
+          "properties": {
+            "cache_duration": "none"
+          },
           "template": "<transparent> \uf12a</> {{ reason .Code }} ",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
@@ -81,7 +93,8 @@
       "segments": [
         {
           "properties": {
-            "always_enabled": true
+            "always_enabled": true,
+            "cache_duration": "none"
           },
           "template": "❯ ",
           "foreground": "#ffffff",
