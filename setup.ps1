@@ -1,14 +1,15 @@
 <#
 .SYNOPSIS
-    Script to configure my dotfiles
+    Script to configure Dotfiles
 .DESCRIPTION
-    This script helps automate the deployment and configuration of your dotfiles.
+    This script sets up configuration files from this Dotfiles repository. It can also install fonts and use Winget to install applications. This script can be only run in powershell 7+ and requires Administrative privilege to run
 .NOTES
-    This script can be only run in powershell 7+
+    Author: Deepak N A
 .LINK
     https://github.com/Deep7k/windows-dotfiles/blob/master/README.md
 .EXAMPLE
     .\setup.ps1 -WithFonts
+    .\setup.ps1 -WithFonts -WithOptionalApps
 #>
 
 [CmdletBinding()]
@@ -21,18 +22,17 @@ param (
     $WithOptionalApps
 )
 
-# Perform important tests before main script execution
 # Check if powershell is running as administrator
 if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
     Write-Host "Please run this script as an Administrator!" -ForegroundColor Red
-    break
+    Exit 1
 }
 
 # Check the powershell version
 $version = $PSVersionTable.PSVersion
-if ($version.Major -ne 7) {
+if ($version.Major -ne 6) {
     Write-Host "This script requires PowerShell 7. The current version is $version." -ForegroundColor Red
-    exit
+    Exit 1
 }
 
 # Test for internet availability
@@ -42,12 +42,12 @@ function Test-InternetConnection {
         return $true
     }
     catch {
-        Write-Warning "Internet connection is required but not available. Please connect to WiFi/Ethernet "
+        Write-Error "Internet connection is required but not available. Please connect to WiFi/Ethernet."
         return $false
     }
 }
 if (-not (Test-InternetConnection)) {
-    break
+    return 
 }
 
 # Check and install App Dependencies
@@ -71,7 +71,7 @@ catch {
     Write-Error "Failed to install Optinal apps Error: $_"
 }
 
-# Install CaskaydiaCove NerdFont. Required for Oh-my-posh prompt
+# Install NerdFonts which is Required for Oh-my-posh prompt and JetBrainsMono
 try {
     [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")
     $fontFamilies = (New-Object System.Drawing.Text.InstalledFontCollection).Families.Name
@@ -91,7 +91,6 @@ try {
         Remove-Item -Path ".\CascadiaCode" -Recurse -Force
         Remove-Item -Path ".\CascadiaCode.zip" -Force
     }
-    # Install Firacode Nerd Font if parameter is specified
     if (($fontFamilies -notcontains "FiraCode Nerd Font") -and ($WithFonts) ) {
 
         Write-Host "Installing Fira Code NF..."
@@ -130,10 +129,11 @@ catch {
 Write-Host "Configuring Dotfiles..."
 $wtSettingsPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 $wtSettingsTarget = (Resolve-Path "$PSScriptRoot\windows-terminal-settings.json").Path
-$powershellDirPath = "$env:USERPROFILE\Documents\Powershell"
+$powershellDirPath = Join-Path ([System.Environment]::GetFolderPath('MyDocuments')) 'Powershell'
 $powershellDirTarget = (Resolve-Path "$PSScriptRoot\Powershell").Path
 $gitconfigPath = "$env:USERPROFILE\.gitconfig"
 $gitconfigTarget = (Resolve-Path "$PSScriptRoot\gitconfig").Path
+$notepadDataPath = "$env:APPDATA\Notepad++"
 $notepadTarget = (Resolve-Path "$PSScriptRoot\Notepad++").Path
 
 function BackupAndLink {
@@ -163,8 +163,8 @@ catch {
     Write-Error "Unable to create symlinks Error: $_"
 }
 
-Compress-Archive -Path $env:APPDATA\Notepad++ -DestinationPath $env:APPDATA\Notepad++\ConfigBackup$(Get-Date -Format "yyyyMMddHH") -CompressionLevel Fastest
-Copy-Item -Path $notepadTarget -Destination $env:APPDATA\Notepad++ -Force
+Compress-Archive -Path $notepadDataPath -DestinationPath $env:APPDATA\Notepad++\ConfigBackup$(Get-Date -Format "yyyyMMddHH") -CompressionLevel Fastest
+Copy-Item -Path $notepadTarget -Destination $notepadDataPath -Force
 
 # Check and install PS Modules
 Write-Host "Installing Powershell modules..."
@@ -176,10 +176,4 @@ catch {
     Write-Error "Failed to install Terminal Icons and posh git. Error: $_"
 }
 
-# Final check and message to the user
-if ((Test-Path -Path $PROFILE) -and (winget list --name "OhMyPosh" -e) -and ($fontFamilies -contains "CaskaydiaCove NF")) {
-    Write-Host "Setup completed successfully. Please restart your PowerShell session to apply changes." -ForegroundColor Green
-}
-else {
-    Write-Warning "Setup completed with errors. Please check the error messages above." 
-}
+Write-Host "Setup Complete. Please restart Windows Terminal for the changes to take effect"
