@@ -107,6 +107,21 @@ try {
         Remove-Item -Path ".\FiraCode" -Recurse -Force
         Remove-Item -Path ".\FiraCode.zip" -Force
     }
+    if (($fontFamilies -notcontains "JetBrains Mono") -and ($WithFonts) ) {
+
+        Write-Host "Installing JetBrains Mono..."
+        Invoke-WebRequest -Uri "https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip" -OutFile ".\JetBrainsMono.zip"
+
+        Expand-Archive -Path ".\JetBrainsMono.zip" -DestinationPath ".\JetBrainsMono" -Force
+        $destination = (New-Object -ComObject Shell.Application).Namespace(0x14)
+        Get-ChildItem -Path ".\JetBrainsMono\fonts\ttf" -Recurse -Filter "*.ttf" -Exclude "*NL*.ttf" | ForEach-Object {
+            If (-not(Test-Path "C:\Windows\Fonts\$($_.Name)")) {        
+                $destination.CopyHere($_.FullName, 0x10)
+            }
+        }
+        Remove-Item -Path ".\JetBrainsMono" -Recurse -Force
+        Remove-Item -Path ".\JetBrainsMono.zip" -Force
+    }
 }
 catch {
     Write-Error "Failed to download or install the Nerd font. Error: $_"
