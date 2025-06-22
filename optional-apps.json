@@ -5,9 +5,6 @@
 		{
 			"Packages": [
 				{
-					"PackageIdentifier": "BleachBit.BleachBit"
-				},
-				{
 					"PackageIdentifier": "Git.Git"
 				},
 				{
@@ -59,9 +56,6 @@
 					"PackageIdentifier": "qBittorrent.qBittorrent"
 				},
 				{
-					"PackageIdentifier": "nepnep.neofetch-win"
-				},
-				{
 					"PackageIdentifier": "SoftDeluxe.FreeDownloadManager"
 				},
 				{
@@ -90,9 +84,6 @@
 				},
 				{
 					"PackageIdentifier": "Microsoft.PowerShell"
-				},
-				{
-					"PackageIdentifier": "OpenVPNTechnologies.OpenVPN"
 				},
 				{
 					"PackageIdentifier": "Python.Python.3.12"
