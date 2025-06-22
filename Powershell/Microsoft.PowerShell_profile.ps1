@@ -2,12 +2,8 @@
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
 # Prompt Configuration
-<<<<<<< HEAD
-oh-my-posh --init --shell pwsh --config "$env:USERPROFILE\Documents\Powershell\oh-my-posh\BlueOwlNew.json" | Invoke-Expression
-=======
 $MyDocuments = [Environment]::GetFolderPath("MyDocuments")
 oh-my-posh --init --shell pwsh --config "$MyDocuments\Powershell\oh-my-posh\catppuccin_mocha.omp.json" | Invoke-Expression
->>>>>>> dev
 
 # Import modules
 Import-Module -Name Terminal-Icons
