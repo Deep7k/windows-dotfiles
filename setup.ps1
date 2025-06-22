@@ -91,21 +91,6 @@ try {
         Remove-Item -Path ".\CascadiaCode" -Recurse -Force
         Remove-Item -Path ".\CascadiaCode.zip" -Force
     }
-    if (($fontFamilies -notcontains "FiraCode Nerd Font") -and ($WithFonts) ) {
-
-        Write-Host "Installing Fira Code NF..."
-        Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip" -OutFile ".\FiraCode.zip"
-
-        Expand-Archive -Path ".\FiraCode.zip" -DestinationPath ".\FiraCode" -Force
-        $destination = (New-Object -ComObject Shell.Application).Namespace(0x14)
-        Get-ChildItem -Path ".\FiraCode" -Recurse -Filter "*.ttf" | ForEach-Object {
-            If (-not(Test-Path "C:\Windows\Fonts\$($_.Name)")) {        
-                $destination.CopyHere($_.FullName, 0x10)
-            }
-        }
-        Remove-Item -Path ".\FiraCode" -Recurse -Force
-        Remove-Item -Path ".\FiraCode.zip" -Force
-    }
     if (($fontFamilies -notcontains "JetBrains Mono") -and ($WithFonts) ) {
 
         Write-Host "Installing JetBrains Mono..."
