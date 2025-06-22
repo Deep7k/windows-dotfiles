@@ -2,7 +2,8 @@
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
 # Prompt Configuration
-oh-my-posh --init --shell pwsh --config "$env:USERPROFILE\Documents\Powershell\oh-my-posh\catppuccin_mocha.omp.json" | Invoke-Expression
+$MyDocuments = [Environment]::GetFolderPath("MyDocuments")
+oh-my-posh --init --shell pwsh --config "$MyDocuments\Powershell\oh-my-posh\catppuccin_mocha.omp.json" | Invoke-Expression
 
 # Import modules
 Import-Module -Name Terminal-Icons
@@ -31,7 +32,7 @@ New-Alias -Name iamhere -Value Send-Keystroke
 # Environment Variables
 $env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
 
-# Autocomplete configurations
+# Autocomplete configurations for winget
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
   param($wordToComplete, $commandAst, $cursorPosition)
   [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
