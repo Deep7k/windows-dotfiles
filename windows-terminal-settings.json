@@ -90,8 +90,8 @@
     ],
     "profiles": {
         "defaults": {
-            "colorScheme": "Catppuccin Mocha",
-            "cursorShape": "underscore",
+            "colorScheme": "NeoSolarized Dark",
+            "cursorShape": "filledBox",
             "font": {
                 "face": "CaskaydiaCove Nerd Font Mono",
                 "size": 12
@@ -154,6 +154,29 @@
             "selectionBackground": "#002A3B",
             "white": "#FFFFFF",
             "yellow": "#FFB900"
+        },
+        {
+            "background": "#001217",
+            "black": "#002B36",
+            "blue": "#268BD2",
+            "brightBlack": "#002B36",
+            "brightBlue": "#839496",
+            "brightCyan": "#93A1A1",
+            "brightGreen": "#586E75",
+            "brightPurple": "#6C71C4",
+            "brightRed": "#CB4B16",
+            "brightWhite": "#FDF6E3",
+            "brightYellow": "#657B83",
+            "cursorColor": "#708183",
+            "cyan": "#2AA198",
+            "foreground": "#708183",
+            "green": "#859900",
+            "name": "NeoSolarized Dark",
+            "purple": "#D33682",
+            "red": "#DC322F",
+            "selectionBackground": "#FCF4DC",
+            "white": "#EEE8D5",
+            "yellow": "#B58900"
         },
         {
             "background": "#300A24",
