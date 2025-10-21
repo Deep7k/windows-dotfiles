@@ -48,11 +48,11 @@
         },
         {
             "id": null,
-            "keys": "ctrl+numpad_plus"
+            "keys": "ctrl+shift+space"
         },
         {
             "id": null,
-            "keys": "ctrl+shift+space"
+            "keys": "ctrl+numpad_plus"
         },
         {
             "id": null,
@@ -98,7 +98,7 @@
         "defaults": 
         {
             "colorScheme": "NeoSolarized Dark",
-            "cursorShape": "underscore",
+            "cursorShape": "filledBox",
             "font": 
             {
                 "face": "CaskaydiaCove Nerd Font Mono",
@@ -239,5 +239,5 @@
     ],
     "showTerminalTitleInTitlebar": false,
     "themes": [],
-    "useAcrylicInTabRow": true
+    "useAcrylicInTabRow": false
 }
