@@ -11,3 +11,5 @@ Notepad++/**/
 !Notepad++/config.xml
 !Notepad++/shortcuts.xml
 !Notepad++/stylers.xml
+# Nvim
+lazy-lock.json
