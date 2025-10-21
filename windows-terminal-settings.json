@@ -98,7 +98,7 @@
         "defaults": 
         {
             "colorScheme": "NeoSolarized Dark",
-            "cursorShape": "filledBox",
+            "cursorShape": "underscore",
             "font": 
             {
                 "face": "CaskaydiaCove Nerd Font Mono",
