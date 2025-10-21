@@ -1,9 +1,11 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions": 
+    [
         {
-            "command": {
+            "command": 
+            {
                 "action": "copy",
                 "singleLine": false
             },
@@ -18,7 +20,8 @@
             "id": "User.find"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -33,7 +36,8 @@
     "initialCols": 92,
     "initialPosition": "840,430",
     "initialRows": 22,
-    "keybindings": [
+    "keybindings": 
+    [
         {
             "id": null,
             "keys": "ctrl+insert"
@@ -44,11 +48,11 @@
         },
         {
             "id": null,
-            "keys": "ctrl+shift+space"
+            "keys": "ctrl+numpad_plus"
         },
         {
             "id": null,
-            "keys": "ctrl+numpad_plus"
+            "keys": "ctrl+shift+space"
         },
         {
             "id": null,
@@ -83,22 +87,29 @@
             "keys": "alt+shift+d"
         }
     ],
-    "newTabMenu": [
+    "newTabMenu": 
+    [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": {
-        "defaults": {
+    "profiles": 
+    {
+        "defaults": 
+        {
             "colorScheme": "NeoSolarized Dark",
             "cursorShape": "filledBox",
-            "font": {
+            "font": 
+            {
                 "face": "CaskaydiaCove Nerd Font Mono",
-                "size": 12
+                "size": 11.8
             },
-            "intenseTextStyle": "all"
+            "intenseTextStyle": "all",
+            "opacity": 55,
+            "useAcrylic": true
         },
-        "list": [
+        "list": 
+        [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -131,7 +142,8 @@
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#0E1019",
             "black": "#232323",
@@ -154,6 +166,29 @@
             "selectionBackground": "#002A3B",
             "white": "#FFFFFF",
             "yellow": "#FFB900"
+        },
+        {
+            "background": "#12121A",
+            "black": "#45475A",
+            "blue": "#89B4FA",
+            "brightBlack": "#585B70",
+            "brightBlue": "#89B4FA",
+            "brightCyan": "#94E2D5",
+            "brightGreen": "#A6E3A1",
+            "brightPurple": "#F5C2E7",
+            "brightRed": "#F38BA8",
+            "brightWhite": "#A6ADC8",
+            "brightYellow": "#F9E2AF",
+            "cursorColor": "#F5E0DC",
+            "cyan": "#94E2D5",
+            "foreground": "#CDD6F4",
+            "green": "#A6E3A1",
+            "name": "Catppuccin Mocha",
+            "purple": "#F5C2E7",
+            "red": "#F38BA8",
+            "selectionBackground": "#585B70",
+            "white": "#BAC2DE",
+            "yellow": "#F9E2AF"
         },
         {
             "background": "#001217",
@@ -200,30 +235,9 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#A2734C"
-        },
-        {
-            "name": "Catppuccin Mocha",
-            "cursorColor": "#F5E0DC",
-            "selectionBackground": "#585B70",
-            "background": "#12121A",
-            "foreground": "#CDD6F4",
-            "black": "#45475A",
-            "red": "#F38BA8",
-            "green": "#A6E3A1",
-            "yellow": "#F9E2AF",
-            "blue": "#89B4FA",
-            "purple": "#F5C2E7",
-            "cyan": "#94E2D5",
-            "white": "#BAC2DE",
-            "brightBlack": "#585B70",
-            "brightRed": "#F38BA8",
-            "brightGreen": "#A6E3A1",
-            "brightYellow": "#F9E2AF",
-            "brightBlue": "#89B4FA",
-            "brightPurple": "#F5C2E7",
-            "brightCyan": "#94E2D5",
-            "brightWhite": "#A6ADC8"
         }
     ],
-    "themes": []
+    "showTerminalTitleInTitlebar": false,
+    "themes": [],
+    "useAcrylicInTabRow": true
 }
