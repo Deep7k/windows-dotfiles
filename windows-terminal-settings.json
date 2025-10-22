@@ -48,11 +48,11 @@
         },
         {
             "id": null,
-            "keys": "ctrl+shift+space"
+            "keys": "ctrl+numpad_plus"
         },
         {
             "id": null,
-            "keys": "ctrl+numpad_plus"
+            "keys": "ctrl+shift+space"
         },
         {
             "id": null,
@@ -97,6 +97,7 @@
     {
         "defaults": 
         {
+            "bellStyle": "taskbar",
             "colorScheme": "NeoSolarized Dark",
             "cursorShape": "filledBox",
             "font": 
@@ -104,9 +105,7 @@
                 "face": "CaskaydiaCove Nerd Font Mono",
                 "size": 11.8
             },
-            "intenseTextStyle": "all",
-            "opacity": 55,
-            "useAcrylic": true
+            "intenseTextStyle": "all"
         },
         "list": 
         [
