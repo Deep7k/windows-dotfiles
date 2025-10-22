@@ -3,7 +3,7 @@
 	email = 60418902+Deep7k@users.noreply.github.com
 [core]
 	autocrlf = true
-	editor = notepad++.exe
+	editor = nvim.exe
 [pager]
 	diff = false
 [diff]
