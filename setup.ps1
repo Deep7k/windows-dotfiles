@@ -30,7 +30,7 @@ if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 # Check the powershell version
 $version = $PSVersionTable.PSVersion
-if ($version.Major -ne 6) {
+if ($version.Major -ne 7) {
     Write-Host "This script requires PowerShell 7. The current version is $version." -ForegroundColor Red
     Exit 1
 }
